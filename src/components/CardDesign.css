@@ -1,0 +1,144 @@
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.card {
+  width: 100%;
+  max-width: 600px;
+  overflow-y: auto;
+  height: auto;
+  margin: 20px;
+  position: relative;
+  background-color: white;
+  box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.text {
+  text-align:  center;
+  color: whitesmoke;
+  font-size: 45px;
+  margin: 10px;
+}
+.header-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 250px;
+  border-radius: 5% 5% 0 0;
+  background-color: #ff7300;
+  -webkit-clip-path: polygon(0 0, 100% 0%, 100% 20%, 0 35%);
+  clip-path: polygon(0 0, 100% 0%, 100% 20%, 0 35%);
+}
+
+.card:hover .header-background {
+  clip-path: none;
+}
+
+.content {
+  position: relative;
+}
+
+.load-wrapp {
+  margin: 0 10px 10px 0;
+  padding: 20px 20px 20px;
+  text-align: center;
+}
+
+.load-wrapp p {
+  padding: 0 0 20px;
+}
+
+.load-wrapp:last-child {
+  margin-right: 0;
+}
+
+.line {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  margin: 5px;
+  border-radius: 15px;
+  background-color: #922f2f;
+}
+
+.load-2 .line:nth-last-child(1),
+.load-2 .line:nth-last-child(2),
+.load-2 .line:nth-last-child(3) {
+  animation: loadingB 1.5s infinite;
+}
+
+@keyframes loadingB {
+  0% {
+    width: 15px;
+  }
+  50% {
+    width: 35px;
+  }
+  100% {
+    width: 15px;
+  }
+}
+
+
+.card .card-information {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 20px;
+  clip-path: circle(5% at 100% 0%);
+  transform: translate(0%, 0%);
+  transition: clip-path 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  padding: 15px;
+  background-color:white;
+}
+
+.card:hover .card-information {
+  clip-path: circle(100%);
+  opacity: 1;
+}
+
+.card .card-information div:nth-child(1),
+.card .card-information div:nth-child(2),
+.card .card-information div:nth-child(3) {
+  width: 85%;
+  height: auto;
+  background-color: transparent;
+  border: 2px solid #fc650050;
+  box-shadow: 0px 2px 5px rgba(196, 109, 59, 0.493), 0px 0px 10px #68350c50;
+  border-radius: 10px;
+  word-wrap: break-word;
+  padding: 5px;
+  margin-bottom: 25px;
+}
+
+.card .card-information .height-container {
+  display: flex;
+  align-items: center;
+}
+
+.card .card-information .height-container p {
+  margin-right: 10px;
+}
+
+@media (max-width: 768px) {
+  .card .card-information div:nth-child(2),
+  .card .card-information div:nth-child(3),
+  .card .card-information div:nth-child(4) {
+    width: 100%;
+  }
+}
+
+
