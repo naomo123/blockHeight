@@ -80,7 +80,7 @@ function BlockHeight() {
         </div>
           <div className="height-container">
             <p style={{ color: 'blue' }}>BlockHeight:   <span style={{ color: 'green' }}>{blockData && blockData.height}</span></p>
-        
+             <span> <Clipboard input={blockData && blockData.height} /> </span>
           </div>
           <div>    <p style={{ color: 'blue' }}># tx:      <span style={{ color: 'green' }}>{blockData && blockData.tx_count}</span></p></div>
         </div>
