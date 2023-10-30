@@ -76,7 +76,7 @@ function BlockHeight() {
         ) : (
           <div className="card-information">
         <div>  <p style={{ color: 'blue' }}>Hash: <span style={{ color: 'green' }}>{blockData && blockData.id}</span></p>
-          <span> <Clipboard input={blockData && blockData.height} /> </span>
+          <span> <Clipboard input={blockData && blockData.id} /> </span>
         </div>
           <div className="height-container">
             <p style={{ color: 'blue' }}>BlockHeight:   <span style={{ color: 'green' }}>{blockData && blockData.height}</span></p>
